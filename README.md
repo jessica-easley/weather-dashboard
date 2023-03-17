@@ -1,4 +1,5 @@
 # Weather Dashboard Application
+This application is a 5-day weather forecast dashboard that uses the OpenWeather API. The application will provide the weather conditions for a searched city. 
 
 # View Deployed Application Here:
 

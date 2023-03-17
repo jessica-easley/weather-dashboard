@@ -1,0 +1,18 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.searchBtn {
+    border-left: 1px solid black;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #1b06d5;
+    color: white;
+}
+
+.searchBtn:hover {
+    font-size: 16px;
+    transition: all .3s ease-sin-out;
+}
