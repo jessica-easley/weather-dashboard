@@ -4,7 +4,6 @@ This application is a 5-day weather forecast dashboard that uses the OpenWeather
 # View Deployed Application Here:
 
 # User Story
-
 AS A traveler
 I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
@@ -27,3 +26,6 @@ THEN I am again presented with current and future conditions for that city
 * OpenWeather API
 
 # Screenshot of Application
+
+* Homepage of Application
+![Homepage of Application](assets/images/jate-text-editor.png)
