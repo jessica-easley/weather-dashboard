@@ -14,44 +14,25 @@
   <link rel"stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-    <div class="container">
     <header>
+    <div class="container-fluid text-center weather-header">
     <h1>Weather Forecast</h1>
     </header> 
-    <main>
         <!-- Put Search Container Here -->
         <div class="search-container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 bg-dark text-white">
                 <h2>Search A City</h2>
-                <p id="cityInput">City: <input type="text" id="input"></p>
-                <button id="searchBtn">Submit</button>
-                <!-- <hr />
-                <h3>My Saved Cities</h3>
-                <br>
-                <div id="savedCities"></div> -->
+                <p id="cityInput">City: <input type="text" id="searchInput" placeholder="Austin"></p>
+                <button class="btn search-button bg-light text-black" id="searchBtn">Submit</button>
             </div>
             </div>
         </div>
-        <!-- Current Date's Weather -->
-        <div class="row">
-        <div class="col-md-9">
-        <div class="todays-weather-card">
-            <div class="card-body">
-                <p class="city"></p>
-                <p class="todays-date"></p>
-                <p class="icon"></p>
-                <p class="temp"></p>
-                <p class="wind"></p>
-                <p class="humidity"></p>
-            </div>
-        </div>
-        </div>
-        </div>
-<!-- 5 Day Forecast -->
-<div>
-    <h3>5-Day Weather Forecast:</h3>
-</div>
+        <div class="col-md-9 bg-dark text-white">
+            <div class="center" id="currentDay"></div>
+            <div class="row" id="forecast"></div>
+          </div>
+         </div>
     </div>
 </div>
 <script

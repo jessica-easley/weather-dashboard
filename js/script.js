@@ -1,31 +1,54 @@
 var searchHistory = [];
-var openWeatherApi = 'https://api.openweathermap.org';
-var openWeatherApiKey = '578ce7eb49d873b9da0cc3aace49f4b9';
+var openWeatherApi = "https://api.openweathermap.org";
+var openWeatherApiKey = "578ce7eb49d873b9da0cc3aace49f4b9";
 
-var date = dayjs().format('M/D/YYYY');
+// var date = dayjs().format('M/D/YYYY');
+
+// DOM element references
+var searchForm = document.querySelector("#search-form");
+var searchInput = document.querySelector("#search-input");
+var todayContainer = document.querySelector("#today");
+var forecastContainer = document.querySelector("#forecast");
+var searchHistoryContainer = document.querySelector("#history");
+
 // Day.js timezone plugins
 dayjs.extend(window.dayjs_plugin_utc);
 dayjs.extend(window.dayjs_plugin_timezone);
 
-// function getSavedCities() {
-//     return JSON.parse(localStorage.getItem("savedCities"));
-// }
+// Display search history
+function renderSearchHistory() {
+  searchHistoryContainer.innerHTML = "";
+}
 
-// // function for input city
-// function getWeather() {
-//     var cityName = document.getElementById("cityInput").value;
+// Add/Update search History to local storage; retrieve from local Storage
+function appendToHistory() {
+  if (searchHistory.indexOf(search) !== -1) {
+    return;
+  }
+  searchHistory.push(search);
 
-// // retrieve saved cities out of local storage
-// var savedCities = getSavedCities();
-// // save to local storage
-// localStorage.setItem("savedCities", JSON.stringify(savedCities));
+  localStorage.setItem("search-history", JSON.stringify(searchHistory));
+  renderSearchHistory();
+}
 
-// //  get data for specific city
-// getApi(cityName);
-// }
-// // fetch function
-// function getApi(city) {
-//     var openWeatherApi = 'api.openweathermap.org/data/2.5/forecast?q=${city}&appid=578ce7eb49d873b9da0cc3aace49f4b9'
-// }
+function initSearchHistory() {
+  var storedHistory = localStorage.getItem("search-history");
+  if (storedHistory) {
+    searchHistory = JSON.parse(storedHistory);
+  }
+  renderSearchHistory();
+}
 
-// document.getElementById("searchBtn").addEventListener("click", getWeather);
+// Current Weather
+
+function renderCurrentWeather(city, weather) {
+  var date = dayjs().format("M/D/YYYY");
+  var tempF = weather.main.temp;
+  var windMph = weather.wind.speed;
+  var humidity = weather.main.humidity;
+}
+
+
+initSearchHistory();
+searchForm.addEventListener('submit', handleSearchFormSubmit);
+searchHistoryContainer.addEventListener('click', handleSearchHistoryClick);
