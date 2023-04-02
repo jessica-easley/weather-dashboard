@@ -21,15 +21,17 @@
         <!-- Put Search Container Here -->
         <div class="search-container">
         <div class="row">
+          <form id="search-form" class="form">
             <div class="col-md-3 bg-dark text-white">
                 <h2>Search A City</h2>
-                <p id="cityInput">City: <input type="text" id="searchInput" placeholder="Austin"></p>
-                <button class="btn search-button bg-light text-black" id="searchBtn">Submit</button>
+                <input class="form-input weather-search" type="text" id="search-input" placeholder="Austin">
+                <button class="btn search-button bg-light text-black" type ="submit" id="searchBtn">Submit</button>
             </div>
             </div>
         </div>
         <div class="col-md-9 bg-dark text-white">
-            <div class="center" id="currentDay"></div>
+            <div class="center" id="today"></div>
+        </form>
             <div class="row" id="forecast"></div>
           </div>
          </div>
